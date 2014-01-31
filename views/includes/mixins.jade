@@ -1,0 +1,5 @@
+mixin link(url)
+    - url = url || '#'
+    li(class= url != '#' && page == url.substring(1) ? 'active' : '' ): a(href=url)
+        block
+    //- Comment to remove mysterious <k/> element

@@ -1,0 +1,10 @@
+extends ../_template
+block append imports
+    link(rel='stylesheet', href='/css/register.css')
+    script(src='/ng/controllers/login_form.js')
+
+block content
+    .jumbotron
+        h1 403 Forbidden
+        p Hey there, you should login to view this page!
+        p: a.btn.btn-primary(href='/login', role='button') Login!

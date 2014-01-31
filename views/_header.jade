@@ -1,0 +1,29 @@
+.navbar.navbar-default.navbar-static-top(role='navigation')
+    .container
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle Navigation
+                .icon-bar
+                .icon-bar
+                .icon-bar
+            a.navbar-brand(href='/') Mentr
+        .navbar-collapse.collapse
+            ul.nav.navbar-nav
+                +link('/') Home
+                +link('/hidden') Hidden
+                +link('/contact') Contact
+                li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown') Dropdown
+                        b.caret
+                    ul.dropdown-menu
+                        +link Some Action
+                        li.divider
+                        li.dropdown-header Action Group
+                        +link Some Other Action
+            ul.nav.navbar-nav.navbar-right
+                if !user
+                    +link('/login') Login
+                    +link('/register') Register
+                else
+                    +link()= 'Howdy, '+user.email+'!'
+                    +link('/logout') Logout

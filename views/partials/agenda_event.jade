@@ -1,0 +1,11 @@
+.preview
+    .avatar
+    .info
+        span.title {{item.title}}
+        span.when {{item.when.toDateString()}}
+    span.slots {{available(item)}} left of {{item.slots.total}}
+    p.blurb {{blurb(item)}}
+.details
+    span.instructor {{item.instructor.name}}
+    p.description {{item.description}}
+    button.btn.btn-success.register(ng-click="register(item)") I'll Be There!

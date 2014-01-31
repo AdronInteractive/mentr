@@ -1,0 +1,11 @@
+include includes/mixins
+doctype html
+html(ng-app='Mentr')
+    head
+        include includes/imports
+        title= 'Mentr'
+    body!= body
+        include _header
+
+        .container#content
+            block content

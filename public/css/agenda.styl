@@ -1,0 +1,150 @@
+#schedule .view.agenda
+    height 560px
+
+.column
+    display inline-block
+    vertical-align top
+    border-left 1px solid #ccc
+    height 100%
+
+    &:first-child
+        border none
+
+    day(color)
+        background hsl(hue(color), 30, 95)
+
+    &.sunday
+        day(#8f77bc)
+    &.monday
+        day(#bc853d)
+    &.tuesday
+        day(#3bbc3b)
+    &.wednesday
+        day(#5296bc)
+    &.thursday
+        day(#b9bc42)
+    &.friday
+        day(#bc353e)
+    &.saturday
+        day(#1638bc)
+
+.agenda-item.header + .agenda-item.event .preview, .agenda-item.event:first-child .preview
+    border none
+
+[agenda-event]
+    display block
+    padding 0 20px 20px 20px
+    cursor pointer
+
+    .preview
+        position relative
+        font-size 0
+        padding-top 20px
+        box-sizing border-box
+        border-top 1px dashed #ddd
+        opacity .8
+        transition opacity .3s ease-in-out
+
+        avatarSize = 50px
+        .avatar
+            display inline-block
+            width avatarSize
+            height avatarSize
+            border-radius 25px
+            background rgba(#000,.2)
+            margin-top 0
+            transition margin-top .3s ease-in-out
+
+        .info
+            display inline-block
+            width 'calc(100% - %s)' % avatarSize
+            height avatarSize
+            vertical-align top
+            padding-left 10px
+            box-sizing border-box
+
+            span
+                display block
+                line-height 25px
+
+                &.title
+                    font-size 16px
+                    font-weight bold
+
+                &.when
+                    font-size 14px
+                    font-style italic
+
+        .slots
+            position absolute
+            top 20px
+            right 0
+            font-size 14px
+            opacity 0
+            transition opacity .3s ease-in-out
+
+
+        .blurb
+            font-size 14px
+            margin 10px 0 0 0
+
+    .details
+        display none
+
+    &:hover
+
+        .preview
+            opacity 1
+
+        .avatar
+            margin-top -5px
+
+        .slots
+            opacity 1
+
+    day(color)
+        background hsl(hue(color), 30, 95)
+
+    &.sunday
+        day(#8f77bc)
+    &.monday
+        day(#bc853d)
+    &.tuesday
+        day(#3bbc3b)
+    &.wednesday
+        day(#5296bc)
+    &.thursday
+        day(#b9bc42)
+    &.friday
+        day(#bc353e)
+    &.saturday
+        day(#1638bc)
+
+[agenda-header]
+    display block
+    width 100%
+    height 30px
+    line-height 30px
+    text-align center
+    font-weight bold
+    font-size 18px
+    color #555
+
+    day(color)
+        background hsla(hue(color), 75, 75, .33)
+        color hsl(hue(color), 25, 25)
+
+    &.sunday
+        day(#8f77bc)
+    &.monday
+        day(#bc853d)
+    &.tuesday
+        day(#3bbc3b)
+    &.wednesday
+        day(#5296bc)
+    &.thursday
+        day(#b9bc42)
+    &.friday
+        day(#bc353e)
+    &.saturday
+        day(#1638bc)

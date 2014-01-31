@@ -1,0 +1,15 @@
+extends _template
+block append imports
+    link(rel='stylesheet', href='/css/agenda.css')
+    script(src='/vendor/js/jquery.min.js')
+    script(src='/ng/controllers/schedule.js')
+    script(src='/ng/controllers/schedule/agenda.js')
+    script(src='/ng/directives/agenda_header.js')
+    script(src='/ng/directives/agenda_event.js')
+
+block content
+    section.filters
+        include components/filters
+    section#schedule(ng-controller='Schedule')
+        section.view.agenda(ng-controller='AgendaView'): include components/agenda
+        section.view.month: include components/month

@@ -1,0 +1,16 @@
+extends _template
+block append imports
+    link(rel='stylesheet', href='/css/register.css')
+    script(src='/ng/controllers/login_form.js')
+
+block content
+    .row
+        .col-md-offset-3.col-md-6
+            form.form-horizontal#Login(role='form', name='$form', ng-controller='LoginForm', ng-submit='submit()')
+                .form-group
+                    .col-sm-4: label.control-label(for='email') Email
+                    .col-sm-8: input.form-control(ng-model='form.email', type='text', placeholder='name@sample.com', required)
+                .form-group
+                    .col-sm-4: label.control-label(for='password') Password
+                    .col-sm-8: input.form-control(ng-model='form.password', type='password', placeholder='Password', required)
+                .col-sm-offset-4.col-sm-8: button.btn.btn-primary(type='submit') Login!

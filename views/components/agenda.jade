@@ -1,0 +1,4 @@
+section.column(ng-repeat="column in columns", ng-style="columnStyle", ng-class="column.class")
+    .agenda-item(ng-repeat="item in itemsInColumn(column.index)", ng-switch, on="item.type", ng-class="item.type")
+        .event(agenda-event, ng-switch-when="event", item='item')
+        .header(agenda-header, ng-switch-when="header", item='item')
